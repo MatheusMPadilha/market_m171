@@ -12,8 +12,12 @@ include_once '../dao/clsConexao.php';
 if(isset($_REQUEST['inserir'])){
 	$produto = new Produto();
 	$produto->setNome($_POST['txtNome']);
-	$produto->setPreco($_POST['txtPreco']);
-	$produto->setQuantidade($_POST['txtQuantidade']);
+        $preco = $_POST['txtPreco'];
+        $preco = str_replace(",", ".", $preco);
+	$produto->setPreco($preco);
+        $quant = $_POST['txtQuantidade'];
+        $quant = str_replace(",", ".", $quant);
+	$produto->setQuantidade($quant);
         
         $produto->setFoto(salvarFoto());
         
@@ -38,8 +42,12 @@ if(isset($_REQUEST['editar'])){
         $produto->setFoto($nova_foto);
     }
     $produto->setNome($_POST['txtNome']);
-    $produto->setPreco($_POST['txtPreco']);
-    $produto->setQuantidade($_POST['txtQuantidade']);
+    $preco = $_POST['txtPreco'];
+    $preco = str_replace(",", ".", $preco);
+    $produto->setPreco($preco);
+    $quant = $_POST['txtQuantidade'];
+    $quant = str_replace(",", ".", $quant);
+    $produto->setQuantidade($quant);
         
     $categoria = new Categoria();
     $categoria->setId($_POST['categoria']);    

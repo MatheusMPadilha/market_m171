@@ -4,8 +4,10 @@
     }
 ?>
 <header>
+    
         <a href="index.php"><button>Início</button></a>
         <a href="produtos.php"><button>Produto</button></a>
+        <a href="meuCarrinho.php"><button>Carrinho</button></a>
         <?php
             if(isset($_SESSION['logado']) && ($_SESSION['logado']) == TRUE){
         ?>
@@ -29,5 +31,6 @@
         <?php
             }
         ?>
+        
     </header>
     <hr>    
